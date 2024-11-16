@@ -1,5 +1,6 @@
 import "./Nav.css";
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 //named export
 export function Nav() {
@@ -7,10 +8,21 @@ export function Nav() {
     <nav>
       <h3 className="logo">FRIENDS</h3>
       <ul className="menu">
-        <li>HOME</li>
-        <li>ADD FRIENDS</li>
-        <li>FRIENDS LIST</li>
-        <li>LOGIN</li>
+        <li>
+          <NavLink to="/">HOME</NavLink>
+        </li>
+        <li>
+          <NavLink to="add-friends">ADD FRIENDS</NavLink>
+        </li>
+        <li>
+          <NavLink to="friends-list">FRIENDS LIST</NavLink>
+        </li>
+        <li>
+          <NavLink to="login">LOGIN</NavLink>
+        </li>
+        <li>
+          <NavLink to="sign-up">SIGN UP</NavLink>
+        </li>
       </ul>
     </nav>
   );

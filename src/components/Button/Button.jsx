@@ -3,7 +3,12 @@ import "./Button.css";
 function Button(props) {
   return (
     <>
-      <button style={{ backgroundColor: props.x }}>{props.name}</button>
+      <button
+        onClick={props.onClick}
+        style={{ backgroundColor: props.x, marginRight: "10px" }}
+      >
+        {props.name}
+      </button>
     </>
   );
 }
