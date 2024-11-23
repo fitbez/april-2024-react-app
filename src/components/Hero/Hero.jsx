@@ -1,9 +1,16 @@
 import "./Hero.css";
-import { sum, multiply } from "../../utils/math";
+import { useState } from "react"; //1st step is to import the useState hook form react
 
 function Hero() {
-  const result = sum(3, 5, 6);
-  const multiplyResult = multiply(3, 5, 6);
+  //2nd step is to initialize our state inside the component
+  //const [name of the state, state setter function] = useState(the initial value of the state)
+  const [myName, setMyName] = useState("Fitsum"); //state init
+
+  // updating the state
+  const handleChangeName = () => {
+    setMyName("John");
+  };
+
   return (
     <div className="hero-section">
       <h1>Welcome To the Friends Page</h1>
@@ -13,8 +20,15 @@ function Hero() {
         ut quam reiciendis, cumque nam quae rerum beatae ad error voluptatum!
         Nulla distinctio in nobis quo earum optio est quia?
       </p>
-      <p>the sum of this three numbers is: {result} </p>
-      <p>the multiplication of these three numbers is: {multiplyResult} </p>
+      <br />
+      <p>My name is: {myName}</p>
+      <br />
+      <button
+        style={{ backgroundColor: "#333", color: "white" }}
+        onClick={handleChangeName}
+      >
+        Change My Name
+      </button>
     </div>
   );
 }
